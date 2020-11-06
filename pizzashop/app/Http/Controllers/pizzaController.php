@@ -24,6 +24,7 @@ class pizzaController extends Controller
     public function show($id)
     {
         $pizza=Pizza::find($id);
+
         return view('pizzas.show',['pizza'=>$pizza]);
     }
 
@@ -48,7 +49,7 @@ class pizzaController extends Controller
         
     // }
 
-public function destroy()
+public function destroy($id)
 {
     $pizza=Pizza::findOrFail($id);
     $pizza->delete();
